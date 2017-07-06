@@ -12,12 +12,16 @@ export default new Vuex.Store({
   state: {
     bOnsetTime: false,
     bPatientCriteria: false,
-    bStart: false
+    bScanCriteria: false,
+    bStart: false,
+    iDuration: -100
   },
   getters: {
     bOnsetTime: state => state.bOnsetTime,
     bPatientCriteria: state => state.bPatientCriteria,
-    bStart: state => state.bStart
+    bScanCriteria: state => state.bScanCriteria,
+    bStart: state => state.bStart,
+    iDuration: state => state.iDuration
   },
   mutations: {
     setOnsetTimeStatus (state, status) {
@@ -26,14 +30,21 @@ export default new Vuex.Store({
     setPatientCriteriaStatus (state, status) {
       state.bPatientCriteria = status
     },
+    setScanCriteriaStatus (state, status) {
+      state.bScanCriteria = status
+    },
     setStartStatus (state, status) {
       state.bStart = status
+    },
+    setDuration (state, duration) {
+      state.iDuration = duration
     }
   },
   actions: {
     doStart (context) {
       context.commit('setOnsetTimeStatus', false)
       context.commit('setPatientCriteriaStatus', false)
+      context.commit('setScanCriteriaStatus', false)
       context.commit('setStartStatus', true)
     }
   }

@@ -12,7 +12,8 @@
         .card.bg-teal.text-white
           //- .card-title Info
           .card-content 
-            p This is an on-line screening tool to identify acute stroke patients potentially suitable for urgent transfer to Auckland Hospital for Percutaneous Stroke Intervention (PSI) / Clot Retrieval. Click the button bellow to start a patient assessment.
+            p This is a screening tool to identify acute stroke patients potentially suitable for urgent transfer to Auckland Hospital for Percutaneous Stroke Intervention (PSI) aka Clot Retrieval. Click the button below to start a patient assessment.
+            p NOTE: This version is still in development. Please report any necessary changes to Dean Kilfoyle.
             p 
               button.secondary(@click="doStart()")
                 |Start
@@ -20,6 +21,7 @@
         onset-time
         patient-criteria
         scan-criteria
+        transfer-instructions
 
       </div>
     </div>
@@ -30,13 +32,15 @@
 import OnsetTime from './OnsetTime.vue'
 import PatientCriteria from './PatientCriteria.vue'
 import ScanCriteria from './ScanCriteria.vue'
+import TransferInstructions from './TransferInstructions.vue'
 import { mapActions } from 'vuex'
 
 export default {
   components: {
     OnsetTime,
     PatientCriteria,
-    ScanCriteria
+    ScanCriteria,
+    TransferInstructions
   },
   data () {
     return {
@@ -52,10 +56,10 @@ export default {
 <style lang="stylus">
 @import '~src/themes/app.mat.styl'
 .passing {
-  background-color: $green-3
+  background-color: $green-2
 }
 .failing {
-  background-color: $amber-3
+  background-color: $amber-2
 }
 .item-link {
   background-color: $dark

@@ -60,11 +60,6 @@ export default {
       return (this.age & this.functional & this.BSL & this.hospital)
     }
   },
-  watch: {
-    bPassAll: function (val) {
-      this.setPatientCriteriaStatus(val)
-    }
-  },
   methods: {
     ...mapMutations(['setPatientCriteriaStatus']),
     advance () {
