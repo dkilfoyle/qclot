@@ -1,6 +1,6 @@
-# Quasar App
+# Auckland PSI 
 
-> A Quasar project
+Developement repository
 
 ## Build Setup
 
@@ -18,7 +18,7 @@ $ quasar build
 $ quasar lint
 ```
 
-## Deploy to Github Pages
+## Setup to deploy to Github Pages
 
 Upgrade webpack set up:
 
@@ -42,4 +42,11 @@ npm install gh-pages --save-dev
 build: {
     publicPath: '/qclot/'
 }
+```
+
+4. Run deply
+
+``` bash
+npm run build
+npm run deploy
 ```
